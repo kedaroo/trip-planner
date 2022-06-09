@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import "./App.css";
+import SearchBar from "./components/SearchBar";
+import VehicleForm from "./components/VehicleForm";
 
-function App() {
+export default function App() {
+  const [origin, setOrigin] = useState("");
+  const [destination, setDestination] = useState("");
+  const [soc, setSoc] = useState(null);
+  const [batteryCapacity, setBatteryCapacity] = useState("");
+
+  useEffect(() => {
+    if (origin) {
+      console.log(origin);
+    }
+  }, [origin]);
+
+  useEffect(() => {
+    if (destination) {
+      console.log(destination);
+    }
+  }, [destination]);
+
+  useEffect(() => {
+    if (soc) {
+      console.log(soc);
+    }
+  }, [soc]);
+
+  useEffect(() => {
+    if (batteryCapacity) {
+      console.log(batteryCapacity);
+    }
+  }, [batteryCapacity]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="input-form">
+        <SearchBar setLoc={setOrigin} placeholder={"Origin"} />
+        <SearchBar setLoc={setDestination} placeholder={"Destination"} />
+      </div>
+      <VehicleForm setSoc={setSoc} setBatteryCapacity={setBatteryCapacity} />
     </div>
   );
 }
-
-export default App;
