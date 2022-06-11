@@ -6,19 +6,19 @@ import Typography from "@mui/material/Typography";
 import Slider from "@mui/material/Slider";
 import MuiInput from "@mui/material/Input";
 
-export default function SocSlider({ setSoc }) {
+export default function SocSlider({ setSoc, maxCapacity }) {
   const [value, setValue] = useState(30);
   const Input = styled(MuiInput)`
     width: 42px;
   `;
   const handleSliderChange = (event, newValue) => {
     setValue(newValue);
-    setSoc(newValue)
+    setSoc(newValue * maxCapacity / 100)
   };
 
   const handleInputChange = (event) => {
     setValue(event.target.value === "" ? "" : Number(event.target.value));
-    setSoc(event.target.value === "" ? "" : Number(event.target.value))
+    setSoc(event.target.value === "" ? "" : (Number(event.target.value) * maxCapacity / 100))
   };
 
   const handleBlur = () => {
