@@ -29,7 +29,6 @@ export default function TripItinerary({ route }) {
           arrivalCharge,
           targetCharge,
         });
-        console.log({ place, time, chargingTime, arrivalCharge, targetCharge });
       }
       setPlaces(results);
     };
