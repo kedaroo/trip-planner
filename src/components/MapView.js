@@ -17,7 +17,7 @@ export default function MapView({ route, isDataLoaded }) {
 
       let map = new H.Map(mapRef.current, defaultLayers.vector.normal.map, {
         center: { lat: 50, lng: 5 },
-        zoom: 4,
+        zoom: 3,
         pixelRatio: window.devicePixelRatio || 1,
       });
 

@@ -3,7 +3,7 @@ import './TripSummary.css'
 export default function TripSummary({ tripSummary }) {
   return (
     <div>
-      <h2>Trip Summary</h2>
+      <h2 style={{marginTop: 0}}>Trip Summary</h2>
       <div className='trip-summary'>
         <div>
           <h3>Distance</h3>

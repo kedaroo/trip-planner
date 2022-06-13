@@ -53,11 +53,12 @@ export default function TripItinerary({ route, batteryCapacity }) {
     fetchPlaces();
 
     return () => setPlaces([]);
-  }, [sections, eta]);
+  }, [sections, eta, batteryCapacity]);
 
   return (
     <div className="container-itinerary">
       <TripSummary tripSummary={{ distance, stops, eta }} />
+      <h2>Trip Stops</h2>
       <ol>
         {places &&
           places.map((place) => (

@@ -14,6 +14,7 @@ body {
   position: sticky;
   top: 0;
   border-bottom: 2px solid lightgray;
+  /* background-color: rgb(255, 255, 229); */
   /* margin-bottom: 1rem; */
 }
 
@@ -53,6 +54,7 @@ body {
 
 .column-1 .form {
   border-bottom: 1px solid gray;
+  padding-bottom: 1rem;
 }
 
 .mapview {
@@ -79,7 +81,7 @@ body {
 
 .map-view {
   width: 100%;
-  height: 40vh;
+  height: 50vh;
 }
 
 .column-2 {
@@ -88,7 +90,19 @@ body {
   align-items: center;
 }
 
-.itinerary {
+.success {
+  padding: 0.5rem;
+  border: 2px solid rgb(89, 216, 89);
+  border-radius: 8px;
+  background-color: rgb(213, 255, 213);
+  margin-bottom: 1rem;
+}
 
+.error {
+  padding: 0.5rem;
+  border: 2px solid rgb(255, 123, 123);
+  border-radius: 8px;
+  background-color: rgb(255, 220, 220);
+  margin-bottom: 1rem;
 }
 

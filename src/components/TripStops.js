@@ -18,9 +18,9 @@ export default function TripStops({ stop }) {
       </div>
 
       <div className="place">
-        <p>{stop.place}</p>
+        <p className="loc-charging">{stop.place}</p>
         <p>Arrival charge: {stop.arrivalCharge} %</p>
-        <p>Target charge: {stop.targetCharge} %</p>
+        {stop.targetCharge && <p>Target charge: {stop.targetCharge} %</p>}
       </div>
 
       <div className="centered">
