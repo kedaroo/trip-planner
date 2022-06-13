@@ -4,7 +4,7 @@ import TripStops from "./TripStops";
 import { secondsToHms } from "../utils/secondToHms";
 import TripSummary from "./TripSummary";
 
-export default function TripItinerary({ route }) {
+export default function TripItinerary({ route, batteryCapacity }) {
   const sections = route.routes[0].sections;
 
   const [places, setPlaces] = useState([]);
@@ -19,14 +19,16 @@ export default function TripItinerary({ route }) {
       let totalDuration = 0;
       for (let section of sections) {
         const place = await reverseGeoCode(section.arrival.place.location);
-        const time = new Date(section.arrival.time).toLocaleString();
+        const time = new Date(section.arrival.time);
         let chargingTime;
         let arrivalCharge;
         let targetCharge;
         if (section.postActions) {
           chargingTime = section.postActions[0].duration;
-          arrivalCharge = section.postActions[0].arrivalCharge;
-          targetCharge = section.postActions[0].targetCharge;
+          arrivalCharge =
+            Math.round((section.postActions[0].arrivalCharge / batteryCapacity) * 100);
+          targetCharge =
+            Math.round((section.postActions[0].targetCharge / batteryCapacity) * 100);
         } else {
           arrivalCharge = section.arrival.charge;
         }
@@ -54,14 +56,14 @@ export default function TripItinerary({ route }) {
   }, [sections, eta]);
 
   return (
-    <div className='container-itinerary'>
-      <TripSummary tripSummary={{distance, stops, eta}} />
+    <div className="container-itinerary">
+      <TripSummary tripSummary={{ distance, stops, eta }} />
       <ol>
         {places &&
           places.map((place) => (
-            <li key={Math.random()} className='stop-item'>
-              <TripStops stop={place}/>
-              <p>PLACE: {place.place}</p>
+            <li key={Math.random()} className="stop-item">
+              <TripStops stop={place} />
+              {/* <p>PLACE: {place.place}</p> */}
               {/* <p>TIME: {place.time}</p>
               {place.chargingTime && <p>CHARGE TIME: {place.chargingTime}</p>}
               {place.arrivalCharge && (

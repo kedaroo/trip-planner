@@ -34,7 +34,7 @@ body {
 }
 
 .column {
-  border: 1px solid black;
+  border-left: 1px solid gray;
   width: 100%;
   flex: 1;
   display: flex;

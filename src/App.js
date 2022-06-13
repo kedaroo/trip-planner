@@ -59,7 +59,7 @@ export default function App() {
 
         {route ? (
           <div className="column overflow-auto itinerary">
-            <TripItinerary route={route} />
+            <TripItinerary route={route} batteryCapacity={batteryCapacity} />
           </div>
         ) : (
           <div className="column column-2 overflow-auto itinerary">

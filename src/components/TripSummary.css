@@ -24,7 +24,12 @@
 .container-stop {
   padding: 1rem;
   display: flex;
-  border: 2px solid gray;
+  border: 2px solid rgb(0, 0, 0);
+  margin-top: 1rem;
+  border-radius: 12px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
 }
 
 .container-stop i {
@@ -34,9 +39,22 @@
     border-radius: 50%;
 }
 
-.charging-time {
+.place {
+    text-align: center;
+}
+
+/* .stop-item:last-child i {
+background-color: blue;
+} */
+
+.centered {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+}
+
+.loc-pin {
+    width: 2rem;
+    text-align: center;
 }
