@@ -7,7 +7,7 @@ export default function TripSummary({ tripSummary }) {
       <div className='trip-summary'>
         <div>
           <h3>Distance</h3>
-          <p>{tripSummary.distance}</p>
+          <p>{tripSummary.distance} km</p>
         </div>
 
         <div>

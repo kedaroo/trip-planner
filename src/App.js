@@ -4,6 +4,7 @@ import SearchBar from "./components/SearchBar";
 import TripItinerary from "./components/TripItinerary";
 import VehicleForm from "./components/VehicleForm";
 import MapView from "./components/MapView";
+import Modal from "./components/Modal";
 
 import Button from "@mui/material/Button";
 
@@ -18,6 +19,7 @@ export default function App() {
   const [isDisabled, setIsDisabled] = useState(false);
   const [message, setMessage] = useState(null);
   const [messageClass, setMessageClass] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   const API_KEY = "z6DIYeUVZ6oFAYoGIfL2AYS6uLuUi7sdLIoTFuALy3o";
 
@@ -43,13 +45,17 @@ export default function App() {
   };
 
   const handleReload = () => {
-    window.location.reload(false)
-  }
+    window.location.reload(false);
+  };
+
+  const handleModal = () => {
+    setShowModal((prevState) => !prevState);
+  };
 
   return (
     <div className="App">
       <header className="header">
-        <i className="fa-regular fa-circle-question"></i>
+        <i className="fa-regular fa-circle-question" onClick={handleModal}></i>
         <div>EV Trip Planner</div>
       </header>
       <div className="container">
@@ -101,6 +107,46 @@ export default function App() {
           </div>
         )}
       </div>
+      {showModal && (
+        <Modal>
+          <h2 style={{ textAlign: "center" }}>How to use EV Trip Planner</h2>
+          <ol>
+            <li>
+              Enter the name of place in <strong>Origin</strong> and{" "}
+              <strong>Destination</strong> respectively.
+            </li>
+            <li>Enter the total battery capacity of your vehicle in kWh.</li>
+            <li>
+              Enter the inital state of charge of your vehicle at start of the
+              journey.
+            </li>
+            <li>
+              Click <strong>Calculate Route</strong> button to get the Map and
+              Itinerary of the journey!
+            </li>
+          </ol>
+          <p
+            style={{ textAlign: "center", fontSize: "1rem", marginBottom: "0" }}
+          >
+            Made with ♥
+          </p>
+          <p style={{ textAlign: "center", fontSize: "1rem" }}>
+            by Kedar, Srushti, Harshad, Rohit, Tanishka, Piyush, Chhavi!
+          </p>
+          <button
+            onClick={handleModal}
+            style={{
+              padding: "0.5rem 1rem",
+              backgroundColor: "#a5f3fc",
+              border: "none",
+              borderRadius: "8px",
+              cursor: "pointer",
+            }}
+          >
+            Close
+          </button>
+        </Modal>
+      )}
     </div>
   );
 }
