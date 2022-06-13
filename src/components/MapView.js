@@ -12,7 +12,7 @@ export default function MapView({ route }) {
 
     const defaultLayers = platform.createDefaultLayers();
 
-    const map = new H.Map(mapRef.current, defaultLayers.vector.normal.map, {
+    let map = new H.Map(mapRef.current, defaultLayers.vector.normal.map, {
       center: { lat: 50, lng: 5 },
       zoom: 4,
       pixelRatio: window.devicePixelRatio || 1,
@@ -46,5 +46,5 @@ export default function MapView({ route }) {
     });
   }, [route]);
 
-  return <div ref={mapRef} style={{ height: "50vh" }}></div>;
+  return <div ref={mapRef} style={{height: '100%', width: '100%' }}></div>;
 }
