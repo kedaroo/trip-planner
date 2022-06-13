@@ -29,7 +29,7 @@ export default function SocSlider({ setSoc, maxCapacity }) {
     }
   };
   return (
-    <Box sx={{ width: 250 }}>
+    <Box>
       <Typography id="input-slider" gutterBottom>
         Initial SoC
       </Typography>
@@ -48,6 +48,7 @@ export default function SocSlider({ setSoc, maxCapacity }) {
             size="small"
             onChange={handleInputChange}
             onBlur={handleBlur}
+            variant="outlined"
             inputProps={{
               step: 10,
               min: 0,

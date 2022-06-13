@@ -1,0 +1,42 @@
+.container-itinerary {
+  width: 100%;
+}
+
+.container-itinerary ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.trip-summary {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: antiquewhite;
+  border-radius: 12px;
+}
+
+.trip-summary div {
+  text-align: center;
+}
+
+.container-stop {
+  padding: 1rem;
+  display: flex;
+  border: 2px solid gray;
+}
+
+.container-stop i {
+    font-size: 2rem;
+    padding: 1rem;
+    background-color: rgb(203, 235, 255);
+    border-radius: 50%;
+}
+
+.charging-time {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}

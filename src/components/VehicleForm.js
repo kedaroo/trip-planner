@@ -6,7 +6,8 @@ export default function VehicleForm({ setSoc, setBatteryCapacity }) {
   const [maxCapacity, setMaxCapacity] = useState("");
 
   return (
-    <div>
+    <div className="input-form">
+      <div>
       <TextField
         id="outlined-basic"
         type="number"
@@ -17,12 +18,13 @@ export default function VehicleForm({ setSoc, setBatteryCapacity }) {
           setBatteryCapacity(e.target.value);
           setMaxCapacity(e.target.value);
         }}
+        fullWidth
       />
-      {/* <label>
-        <span>Total Battery Capacity</span>
-        <input type={"number"} min={1} max={80} onChange={(e) => {}} />
-      </label> */}
+      </div>
+      <div>
       <SocSlider setSoc={setSoc} maxCapacity={maxCapacity} />
+      </div>
+      
     </div>
   );
 }
