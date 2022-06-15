@@ -29,7 +29,7 @@ export default function SearchBar({ setLoc, placeholder }) {
   return (
     <Autocomplete
       filterOptions={(x) => x}
-      freeSolo
+      // freeSolo
       value={value}
       onChange={(e, newValue) => {
         setValue(newValue);
