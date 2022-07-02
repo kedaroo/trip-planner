@@ -56,7 +56,7 @@ export default function App() {
     <div className="App">
       <header className="header">
         <i className="fa-regular fa-circle-question" onClick={handleModal}></i>
-        <div>EV Trip Planner🇮🇳</div>
+        <div>EV Trip Planner</div>
       </header>
       <div className="container">
         <div className="column column-1">
