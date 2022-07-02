@@ -14,7 +14,7 @@ body {
   position: sticky;
   top: 0;
   border-bottom: 1px solid gray;
-  background-color: #ecfeff;
+  background-color: #efecff;
 
   /* background-color: rgb(255, 255, 229); */
   /* margin-bottom: 1rem; */
@@ -110,6 +110,10 @@ body {
   background-color: rgb(255, 220, 220);
   margin-bottom: 1rem;
 }
+
+
+
+
 
 @media only screen and (max-width: 1000px) {
   .container {
