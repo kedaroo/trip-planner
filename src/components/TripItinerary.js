@@ -64,13 +64,6 @@ export default function TripItinerary({ route, batteryCapacity }) {
           places.map((place) => (
             <li key={Math.random()} className="stop-item">
               <TripStops stop={place} />
-              {/* <p>PLACE: {place.place}</p> */}
-              {/* <p>TIME: {place.time}</p>
-              {place.chargingTime && <p>CHARGE TIME: {place.chargingTime}</p>}
-              {place.arrivalCharge && (
-                <p>CHARGE ON ARRIVAL: {place.arrivalCharge}</p>
-              )}
-              {place.targetCharge && <p>TARGET CHARGE: {place.targetCharge}</p>} */}
             </li>
           ))}
       </ol>

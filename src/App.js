@@ -1,11 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
+// components
 import SearchBar from "./components/SearchBar";
 import TripItinerary from "./components/TripItinerary";
 import VehicleForm from "./components/VehicleForm";
 import MapView from "./components/MapView";
 import Modal from "./components/Modal";
 
+// material UI component
 import Button from "@mui/material/Button";
 
 import "./App.css";
@@ -125,14 +127,7 @@ export default function App() {
               Itinerary of the journey!
             </li>
           </ol>
-          <p
-            style={{ textAlign: "center", fontSize: "1rem", marginBottom: "0" }}
-          >
-            Made with ♥
-          </p>
-          <p style={{ textAlign: "center", fontSize: "1rem" }}>
-            by Kedar, Srushti, Harshad, Rohit, Tanishka, Piyush, Chhavi!
-          </p>
+          
           <button
             onClick={handleModal}
             style={{
